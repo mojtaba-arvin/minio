@@ -1,6 +1,5 @@
 # Simple S3-compatible object storage service using Minio
-
-
+![minio up](https://user-images.githubusercontent.com/6056661/111041989-4da76c00-8450-11eb-9a84-9ae00740d024.png)
 ### Setup environment
 
 `Minio` environment ,must be at `.docker-compose/` directory as `.env` file. you can copy the sample:
