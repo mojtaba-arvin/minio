@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    minio0:
+        networks:
+            - reverse-proxy-network
+    minio1:
+        networks:
+            - reverse-proxy-network
+    minio2:
+        networks:
+            - reverse-proxy-network
+    minio3:
+        networks:
+            - reverse-proxy-network
+networks:
+    proxy-network:
+        external:
+            name: nginx_reverse-proxy-network
+##                  ^             ^
+##          name: of project    network created inside that project
