@@ -7,6 +7,11 @@ services:
     env_file:
       - .docker-compose/.env
     command: ["server", "http://minio{0...3}/data{0...1}"]
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
     expose:
       - "9000"
     volumes:
@@ -20,6 +25,11 @@ services:
     env_file:
       - .docker-compose/.env
     command: ["server", "http://minio{0...3}/data{0...1}"]
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
     expose:
       - "9000"
     volumes:
@@ -33,6 +43,11 @@ services:
     env_file:
       - .docker-compose/.env
     command: ["server", "http://minio{0...3}/data{0...1}"]
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
     expose:
       - "9000"
     volumes:
@@ -45,7 +60,12 @@ services:
     image: minio/minio:RELEASE.2021-03-12T00-00-47Z
     env_file:
       - .docker-compose/.env
-    command: ["server", "http://minio{0...1}/data{0...1}"]
+    command: ["server", "http://minio{0...3}/data{0...1}"]
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
     expose:
       - "9000"
     volumes:
