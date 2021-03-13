@@ -1,5 +1,4 @@
-# minio
-Simple Minio (S3-compatible storage) service
+# Simple S3-compatible object storage service using Minio
 
 
 ### Setup environment
